@@ -1,0 +1,1117 @@
+Filename has been initialized to words/sgb-words.txt
+Word list has been created.  Example word = THEIR.  Total number of words = 5755.
+Word list has been filtered.  Example word = THEIR. Total number of words = 5755
+Removed words with letters = []
+Word list contained 5755 words
+Word list now contains 5755 words
+Reduced word list has length of 3834
+Letter distribution calculated
+Removed words with letters = []
+Word list contained 5755 words
+Word list now contains 5755 words
+Letter distribution calculated
+Max Entropy = 1.8302263947483106
+5 top entropy enntries = [1.79924345 1.79984944 1.81626084 1.81858745 1.83022639]
+----**---- SORES, Entropy = 1.8302263947483106
+----**---- SALES, Entropy = 1.8185874452383322
+----**---- SOLES, Entropy = 1.8162608383094638
+----**---- SATES, Entropy = 1.7998494393571876
+----**---- SIRES, Entropy = 1.7992434501209977
+Highest entropy word are: 
+--- SORES
+The best guess in this iteration is: SORES
+Filename has been initialized to words/sgb-words.txt
+Word list has been created.  Example word = THEIR.  Total number of words = 5755
+Removed words with letters = []
+Word list contained 5755 words
+Word list now contains 5755 words
+Letter distribution calculated
+Max Entropy = 1.8302263947483106
+5 top entropy enntries = [1.79924345 1.79984944 1.81626084 1.81858745 1.83022639]
+----**---- SORES, Entropy = 1.8302263947483106
+----**---- SALES, Entropy = 1.8185874452383322
+----**---- SOLES, Entropy = 1.8162608383094638
+----**---- SATES, Entropy = 1.7998494393571876
+----**---- SIRES, Entropy = 1.7992434501209977
+Highest entropy word are: 
+--- SORES
+The best guess in this iteration is: SORES
+Result = False
+Choice Status = 
+[[0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+**ANALYSIS**
+[]
+[]
+[]
+['S', 'O', 'R', 'E', 'S']
+Removed words with letters = ['S', 'O', 'R', 'E', 'S']
+Word list contained 5755 words
+Word list now contains 642 words
+Letter distribution calculated
+Max Entropy = 1.8751625462307058
+5 top entropy enntries = [1.81445791 1.81911385 1.82598571 1.85334305 1.87516255]
+----**---- CANNY, Entropy = 1.8751625462307058
+----**---- FANNY, Entropy = 1.8533430459730889
+----**---- PUNNY, Entropy = 1.8259857091242035
+----**---- BUNNY, Entropy = 1.8191138479763846
+----**---- FINNY, Entropy = 1.8144579069296796
+Highest entropy word are: 
+--- CANNY
+The best guess in this iteration is: CANNY
+Result = False
+Choice Status = 
+[[0. 0. 0. 0. 0.]
+ [0. 2. 2. 1. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+**ANALYSIS**
+['A', 'N']
+[[1], [2]]
+[[], [3]]
+['S', 'O', 'R', 'E', 'S', 'C', 'Y']
+*** N, 3
+THINK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+THING
+*** N, 3
+*** N, 3
+*** N, 3
+PLANT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+PAINT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+LYING
+*** N, 3
+THANK
+*** N, 3
+FUNNY
+*** N, 3
+GIANT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+BLANK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+BLIND
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+FAINT
+*** N, 3
+*** N, 3
+*** N, 3
+DYING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+FLUNG
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CLUNG
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CHANT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CLING
+*** N, 3
+*** N, 3
+*** N, 3
+PLANK
+*** N, 3
+CHINA
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+FLINT
+*** N, 3
+*** N, 3
+*** N, 3
+BLUNT
+*** N, 3
+*** N, 3
+GLAND
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+GAUNT
+*** N, 3
+*** N, 3
+TYING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CHUNK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+FAUNA
+*** N, 3
+FLING
+*** N, 3
+FLANK
+*** N, 3
+ICING
+*** N, 3
+*** N, 3
+*** N, 3
+BLINK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+AGING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+BLAND
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+HAUNT
+*** N, 3
+*** N, 3
+*** N, 3
+TAWNY
+*** N, 3
+CLANG
+*** N, 3
+GLINT
+*** N, 3
+*** N, 3
+TAUNT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+TWANG
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CLINK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CLANK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+BUNNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+TAINT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CANNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+VYING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+JAUNT
+*** N, 3
+*** N, 3
+FLUNK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+DAUNT
+*** N, 3
+APING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+ACING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+WANNA
+*** N, 3
+*** N, 3
+*** N, 3
+MANNA
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+AVANT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+TINNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+QUINT
+*** N, 3
+CLUNK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+GUNNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CHINK
+*** N, 3
+*** N, 3
+VAUNT
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+WHINY
+*** N, 3
+*** N, 3
+FANNY
+*** N, 3
+NINNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+NANNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+WHANG
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+VIAND
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+AXING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+THANX
+*** N, 3
+*** N, 3
+KLUNK
+*** N, 3
+YAWNY
+*** N, 3
+*** N, 3
+*** N, 3
+PLUNK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+MAGNA
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+THUNK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+GINNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+TWINY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+DJINN
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+BWANA
+*** N, 3
+*** N, 3
+*** N, 3
+LAWNY
+*** N, 3
+*** N, 3
+*** N, 3
+PUNNY
+*** N, 3
+*** N, 3
+TWINK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+FAWNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+PLINK
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+PIING
+*** N, 3
+*** N, 3
+AWING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CANNA
+*** N, 3
+*** N, 3
+BHANG
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+TUNNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+CUING
+*** N, 3
+*** N, 3
+BLINI
+*** N, 3
+*** N, 3
+*** N, 3
+FINNY
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+HYING
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+*** N, 3
+Removed words with letters = ['S', 'O', 'R', 'E', 'S', 'C', 'Y']
+Word list contained 642 words
+Word list now contains 44 words
+Letter distribution calculated
+Max Entropy = 2.1626679192871694
+5 top entropy enntries = [2.05677175 2.10649263 2.11920101 2.13622189 2.16266792]
+----**---- PAVAN, Entropy = 2.1626679192871694
+----**---- FANIN, Entropy = 2.1362218891686693
+----**---- PAGAN, Entropy = 2.119201012800582
+----**---- UNMAN, Entropy = 2.1064926274308653
+----**---- JAPAN, Entropy = 2.056771746136322
+Highest entropy word are: 
+--- PAVAN
+The best guess in this iteration is: PAVAN
+Result = False
+Choice Status = 
+[[0. 0. 0. 0. 0.]
+ [0. 2. 2. 1. 0.]
+ [2. 2. 0. 1. 1.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+**ANALYSIS**
+['A', 'N', 'P']
+[[1], [2], [0]]
+[[1, 3], [3, 4], []]
+['S', 'O', 'R', 'E', 'S', 'C', 'Y', 'V']
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+AGAIN
+*** A, 1
+*** A, 3
+HUMAN
+*** N, 3
+*** N, 4
+HUMAN
+*** A, 1
+*** A, 3
+FINAL
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+PLAIN
+*** A, 1
+NAVAL
+*** A, 3
+NAVAL
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+PAGAN
+*** A, 3
+PAGAN
+*** N, 3
+*** N, 4
+PAGAN
+*** A, 1
+PANDA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+TWAIN
+*** A, 1
+MANIA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+DIVAN
+*** N, 3
+*** N, 4
+DIVAN
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+ALIGN
+*** A, 1
+WANTA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+NATAL
+*** A, 3
+NATAL
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+BANAL
+*** A, 3
+BANAL
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+TITAN
+*** N, 3
+*** N, 4
+TITAN
+*** A, 1
+LATIN
+*** A, 3
+*** N, 3
+*** N, 4
+LATIN
+*** A, 1
+*** A, 3
+AXMAN
+*** N, 3
+*** N, 4
+AXMAN
+*** A, 1
+*** A, 3
+AVIAN
+*** N, 3
+*** N, 4
+AVIAN
+*** A, 1
+*** A, 3
+ADMAN
+*** N, 3
+*** N, 4
+ADMAN
+*** A, 1
+GAMIN
+*** A, 3
+*** N, 3
+*** N, 4
+GAMIN
+*** A, 1
+*** A, 3
+UNJAM
+*** N, 3
+*** N, 4
+*** A, 1
+NABLA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+LANAI
+*** A, 3
+LANAI
+*** N, 3
+*** N, 4
+*** A, 1
+NAIAD
+*** A, 3
+NAIAD
+*** N, 3
+*** N, 4
+*** A, 1
+MANTA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+PANGA
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+UNMAN
+*** N, 3
+*** N, 4
+UNMAN
+*** A, 1
+*** A, 3
+APIAN
+*** N, 3
+*** N, 4
+APIAN
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+JAPAN
+*** A, 3
+JAPAN
+*** N, 3
+*** N, 4
+JAPAN
+*** A, 1
+PAVAN
+*** A, 3
+PAVAN
+*** N, 3
+*** N, 4
+PAVAN
+*** A, 1
+LAPIN
+*** A, 3
+*** N, 3
+*** N, 4
+LAPIN
+*** A, 1
+*** A, 3
+UNMAP
+*** N, 3
+*** N, 4
+*** A, 1
+FANIN
+*** A, 3
+*** N, 3
+*** N, 4
+FANIN
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+ALGIN
+*** A, 1
+*** A, 3
+*** N, 3
+*** N, 4
+*** A, 1
+*** A, 3
+UNBAN
+*** N, 3
+*** N, 4
+UNBAN
+Removed words with letters = ['S', 'O', 'R', 'E', 'S', 'C', 'Y', 'V']
+Word list contained 44 words
+Word list now contains 2 words
+Letter distribution calculated
+Max Entropy = 3.1897352853986263
+2 top entropy enntries = [3.18973529 3.18973529]
+----**---- UNAPT, Entropy = 3.1897352853986263
+----**---- INAPT, Entropy = 3.1897352853986263
+Highest entropy word are: 
+--- INAPT
+The best guess in this iteration is: INAPT
+Result = False
+Choice Status = 
+[[0. 0. 0. 0. 0.]
+ [0. 2. 2. 1. 0.]
+ [2. 2. 0. 1. 1.]
+ [0. 1. 1. 1. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+**ANALYSIS**
+['A', 'N', 'P']
+[[1], [2], [0]]
+[[1, 3, 2], [3, 4, 1], [3]]
+['S', 'O', 'R', 'E', 'S', 'C', 'Y', 'V', 'I', 'T']
+*** A, 1
+*** A, 3
+*** A, 2
+INAPT
+*** N, 3
+*** N, 4
+*** N, 1
+INAPT
+*** P, 3
+INAPT
+*** A, 1
+*** A, 3
+*** A, 2
+UNAPT
+*** N, 3
+*** N, 4
+*** N, 1
+UNAPT
+*** P, 3
+UNAPT
+Removed words with letters = ['S', 'O', 'R', 'E', 'S', 'C', 'Y', 'V', 'I', 'T']
+Word list contained 2 words
+Word list now contains 0 words

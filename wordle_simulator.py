@@ -24,8 +24,11 @@ class Wordle_Simulator:
     def loadWords(self):
         #Load words into a list
         my_file = open(self.wordfilename, 'r')
-        self.wordlist  = my_file.read().splitlines()[2:] #Remove first two lines
+        wordlist_temp  = my_file.read().splitlines()[2:] #Remove first two lines
         my_file.close()
+        self.wordlist = []
+        for i in wordlist_temp:
+            self.wordlist.append(i.upper())
         #print(self.wordlist)
         print('Word list has been created.  Example word = {}.  Total number of words = {}'.format(self.wordlist[0], len(self.wordlist)))
 

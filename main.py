@@ -3,12 +3,13 @@
 
 import numpy as np
 import collections
+import wordle_simulator as wrd
 #import matplotlib.pyplot as plt
 
 #Notes: want to choose a single word that has the most letters
 #and out of these, the word that is most likely
 
-class Wordle:
+class WordleSolver:
 
     #Class for wordle analysis
     def __init__(self):
@@ -16,6 +17,10 @@ class Wordle:
         self.wordlist = []
         self.wordlist_N = []
         self.Nletters = 26 #26 letters
+        self.lettersE = [] #Excluded letters
+        self.lettersI = [] #Included letters
+        self.lettersIPos = [] #Included letters, final position
+        self.lettersIPosE = [] #Included letters, not in this position
 
     def initializeFile(self, filename):
         self.wordfilename = filename
@@ -77,11 +82,11 @@ class Wordle:
         self.letter_distribution_global = self.countglobal / np.sum(self.countglobal)
         
         print('Letter distribution calculated')
-        print('Letter Distribution Is:')
-        for i in range(26):
-            ch = chr(i+65)
-            di = self.letter_distribution_global[i]
-            print('Letter {}: {}'.format(ch, di))
+        #print('Letter Distribution Is:')
+        #for i in range(26):
+        #    ch = chr(i+65)
+        #    di = self.letter_distribution_global[i]
+        #    print('Letter {}: {}'.format(ch, di))
 
         #exit()
 
@@ -121,17 +126,22 @@ class Wordle:
                 for j in range(len(lettersIncluded)):
                     if lettersIncluded[j] not in words[i]: #This letter isn't in the word, remove it
                         keepWordI = False
-                    if lettersIncludedPosition[j] > -1: #it isn't -1, that means we know the position
-                        if words[i][lettersIncludedPosition[j]] != lettersIncluded[j]: #the letter isn't in the right place
-                            #print('***')
-                            #print(words[i][lettersIncludedPosition[j]])
-                            #print(lettersIncluded[j])
-                            keepWordI = False #Also remove it
+                    #Iterate over positions
+                    for k in range(1):#len(lettersIncludedPosition[j])):
+                        if lettersIncludedPosition[j][k] > -1: #it isn't -1, that means we know the position
+                            if words[i][lettersIncludedPosition[j][k]] != lettersIncluded[j]: #the letter isn't in the right place
+                                keepWordI = False #Also remove it
+                    
+                    #elif lettersIncludedPosition[j][0] > -1: #it isn't -1, that means we know the position
+                                #    if words[i][lettersIncludedPosition[j][0]] != lettersIncluded[j]: #the letter isn't in the right place
+                    #        keepWordI = False #Also remove it
                      #If -1, then look at the relevant entry of lettersIncludedPositionX, and remove words with letters in that position
                      #This is a set
                      #Not just if we don't know, you also know where it isn't
                     for k in range(len(lettersIncludedPositionX[j])):
+                        #print('*** {}, {}'.format(lettersIncluded[j], lettersIncludedPositionX[j][k]))
                         if words[i][lettersIncludedPositionX[j][k]] == lettersIncluded[j]: #This woudl have been green
+                            #print(words[i])
                             keepWordI = False #Remove it
                                
 
@@ -159,7 +169,7 @@ class Wordle:
                 len_Int = ord(uw[j]) - 65
                 #Change distributino to P(x|when x is in position j)
                 dist = self.letter_distribution[len_Int][j]
-                dist = self.letter_distribution_global[len_Int]
+                #dist = self.letter_distribution_global[len_Int]
                 tempEntropy[idx] -= dist*np.log(dist)/np.log(2)
                 #tempEntropy[idx] *= dist
                 #Need to look at two distributions: distribution of position i, and distribution of being in the word
@@ -240,10 +250,11 @@ class Wordle:
         #print(words[entropy == maxval])
         print('Highest entropy word are: ')
         for i in range(len(words)):
-            if entropy[i] >= maxval - 0.00000001:
+            if entropy[i] == maxval: #>= maxval - 0.00000001:
                 print('--- {}'.format(words[i]))
-        minval = np.min(entropy)
-        print('Minimum entropy word is: ')
+                return words[i]
+        #minval = np.min(entropy)
+        #print('Minimum entropy word is: ')
         #for i in range(len(words)):
         #    if entropy[i] <= minval + 0.1:
         #        print('--- {}'.format(words[i]))
@@ -251,24 +262,104 @@ class Wordle:
 
     def strategy_A(self):
         #This is the entropy strategy
-        lettersI = []
-        lettersIPos = []
-        lettersIPosE = [[]]
-        lettersE = []
+        #lettersI = []
+        #lettersIPos = []
+        #lettersIPosE = [[]]
+        #lettersE = []
 
 
-        self.removeWords(lettersE, lettersI, lettersIPos, lettersIPosE, self.wordlist_N)
+        self.removeWords(self.lettersE, self.lettersI, self.lettersIPos, self.lettersIPosE, self.wordlist_N)
         #Get distribution
         self.getDistribution(self.wordlist_N)
         self.getEntropy(self.wordlist_N)
-        self.sortEntropy(self.wordlist_N)
+        bestguess = self.sortEntropy(self.wordlist_N, self.entropy_N)
+        print('The best guess in this iteration is: {}'.format(bestguess))
+
+        return bestguess
+
+    def initializeWordleGame(self):
+        self.wordSize = 5
+        self.tryCount = 6
+        self.game = wrd.Wordle_Simulator(self.wordSize, self.tryCount)
+        self.game.initializeFile(self.wordfilename)
+        self.game.loadWords()
+        self.game.targetWord = 'PANDA' #'PANIC'
+        #self.game.targetWord = 'PANIC'
+
+    def playWordleGame(self):
+        #Play the game for self.tryCount
+        status = False
+        for i in range(self.tryCount):
+            bestguess = self.strategy_A()
+            #bestguess = 'PANIC'
+            status = w.game.compareWord(bestguess, i)
+            print('Result = {}'.format(status))
+            print('Choice Status = \n{}'.format(self.game.choiceStatus))
+            #print('Remaining letters = \n{}'.format(self.game.letterList))
+
+            if status == True:
+                print('You solved it in {} steps'.format(i+1))
+                break
+
+            self.interpretPlay(bestguess, self.game.choiceStatus, i)
+
+            
+        if status == False: #Did not succeed
+            print('You did not succeed.')
+
+        return status, i+1 #Number of steps needed 
+
+        #print(i)
+
+    def interpretPlay(self, currentGuess, gameStatus, step):
+        #Figure out which letters were used so far, and if they are valid
+        #currentGuess is the guess for this round
+        #gamestatus is the status of the game so far
+        #step is which step this is on
+        currentStatus = gameStatus[step]
+        #print(currentStatus)
+        #Go through each letter in the word and see what the status is
+        for i in range(len(currentGuess)):
+            val = currentStatus[i]
+            if val == 0: #Does not exist
+                self.lettersE.append(currentGuess[i])
+            elif val == 1 or val == 2: #Exists, but not in this position
+                #Check to see if it already exists in lettersI
+                if currentGuess[i] not in self.lettersI:
+                    self.lettersI.append(currentGuess[i])
+                    if val == 1:
+                        self.lettersIPos.append([-1]) #Don't know where it is, so it is -1
+                        self.lettersIPosE.append([i]) #We know it isn't in this position
+                    elif val == 2:
+                        self.lettersIPos.append([i]) #Store position
+                        self.lettersIPosE.append([]) #Store empty list
+                else: #It already is in the list
+                    ind = self.lettersI.index(currentGuess[i])
+                    if self.lettersIPos[ind][0] > -1: #We know where it is.  But need to store multiple spots
+                        self.lettersIPos[ind].append(i) #Exclude from this position
+                    elif self.lettersIPos[ind][0] == -1: #Update to position
+                        self.lettersIPos[ind] = []
+                        self.lettersIPos[ind].append(i)
+            #elif val == 2: #It exists here, save the position if it doesn't exist
+
+        print('**ANALYSIS**')
+        print(self.lettersI)
+        print(self.lettersIPos)
+        print(self.lettersIPosE)
+        print(self.lettersE)
+        #self.lettersE = [] #Excluded letters
+        #self.lettersI = [] #Included letters
+        #self.lettersIPos = [] #Included letters, final position
+        #self.lettersIPosE = [] #Included letters, not in this position
+                      
+        
         
             
         
         
 
 
-w = Wordle();
+w = WordleSolver();
 #w.initializeFile('words/Collins_Scrabble_Words_2019.txt')
 w.initializeFile('words/sgb-words.txt')
 w.loadWords()
@@ -288,26 +379,31 @@ w.filterWords(N=5)
 
 #Remove some words
 #Also know that if it is yellow, that it isn't in that position
-lettersI =   []
-lettersIPos = []
-lettersIPosE = [] #The included letters are not in these positions
+#lettersI =   []
+#lettersIPos = []
+#lettersIPosE = [] #The included letters are not in these positions
 #lettersIPosE = [[], [], [], []]
-lettersE = []
-w.removeWords(lettersE, lettersI, lettersIPos, lettersIPosE,  w.wordlist_N)
+#lettersE = []
+#w.removeWords(lettersE, lettersI, lettersIPos, lettersIPosE,  w.wordlist_N)
 #Get next best word
-w.reduceWordList(w.wordlist_N) #Remove repeated letters
+#w.reduceWordList(w.wordlist_N) #Remove repeated letters
 #Recalculate word list
 #w.getDistribution(w.reducedWordList)
 #What if I don't recalculate the distributions
-w.getDistribution(w.wordlist_N)
+#w.getDistribution(w.wordlist_N)
 #Get entropy with actual list
 #w.getEntropy(w.reducedWordList)
 #print('Recommendation with unique letters!')
 #w.sortEntropy(w.reducedWordList, w.entropy_N)
-w.getEntropy(w.wordlist_N)
+#w.getEntropy(w.wordlist_N)
 #print('Recommendation with multiple letters!')
-w.sortEntropy(w.wordlist_N, w.entropy_N)
+#w.sortEntropy(w.wordlist_N, w.entropy_N)
 #w.getSeparation(w.wordlist_N)
+w.strategy_A()
+
+w.initializeWordleGame()
+status, stepount = w.playWordleGame()
+
 
 
 
