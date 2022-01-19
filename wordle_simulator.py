@@ -6,19 +6,21 @@ import numpy as np
 
 class Wordle_Simulator:
 
-    def __init__(self, wordSize, tryCount):
+    def __init__(self, wordSize, tryCount, debug = False):
         self.wordLen = wordSize #Length of word
         self.tryMax = tryCount #Number of tries
         self.choiceStatus = np.zeros([tryCount, wordSize]) #Contains details on status of choices
         self.letterList = list(range(65,+65+26))
         for i in range(len(self.letterList)):
             self.letterList[i] = chr(self.letterList[i])
+        self.debug = debug
         
         #print(self.letterList)
 
     def initializeFile(self, filename):
         self.wordfilename = filename
-        print('Filename has been initialized to {}'.format(self.wordfilename))
+        if self.debug:
+            print('Filename has been initialized to {}'.format(self.wordfilename))
         
 
     def loadWords(self):
@@ -30,7 +32,8 @@ class Wordle_Simulator:
         for i in wordlist_temp:
             self.wordlist.append(i.upper())
         #print(self.wordlist)
-        print('Word list has been created.  Example word = {}.  Total number of words = {}'.format(self.wordlist[0], len(self.wordlist)))
+        if self.debug: 
+            print('Word list has been created.  Example word = {}.  Total number of words = {}'.format(self.wordlist[0], len(self.wordlist)))
 
     def filterWords(self, N):
         #Number of letters = N
@@ -44,12 +47,16 @@ class Wordle_Simulator:
             if len(w) == N:
                 self.wordlist_N.append(w)
 
-        print('Word list has been filtered.  Example word = {}. Total number of words = {}'.format(self.wordlist_N[0], len(self.wordlist_N)))
+        if self.debug:
+            print('Word list has been filtered.  Example word = {}. Total number of words = {}'.format(self.wordlist_N[0], len(self.wordlist_N)))
 
-    def chooseWord(self):
-        indW = np.random.randint(len(self.wordlist_N))
+    def chooseWord(self, num = -1):
+        if num == -1:
+            indW = np.random.randint(len(self.wordlist_N))
+        else:
+            indW = num
         targetWord = self.wordlist_N[indW]
-        print('Target word = {}'.format(targetWord))
+        print('***Target word = {}'.format(targetWord))
         self.targetWord = targetWord
 
     def compareWord(self, choice, tryNo):
