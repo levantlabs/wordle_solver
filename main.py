@@ -227,65 +227,147 @@ class WordleSolver:
         originalDistribution = self.letter_distribution
         #self.wordlist_N = 0
         #print(originalWordList)
-        c = 2
+        c = 3
         wordEntropy = np.zeros(len(originalWordList))
         for idx, w in enumerate(originalWordList):
-            print('Analyzing word {}'.format(w))
+            print('{}: Analyzing word  {}'.format(idx, w))
             newEntropy = 0
+            #if 0, then not in the word
+            #if 1, then is somewhere in the word, but not in this position
+            #if 2, then it is in the word, and is in this position
+            #
             for i1 in range(c):
                 for i2 in range(c):
                     for i3 in range(c):
                         for i4 in range(c):
                             for i5 in range(c):
                                 lettersInc = []
+                                lettersIncPos = []
+                                lettersIncPosExc = [] #Included, but not in this position
                                 lettersExc = []
                                 prob = 1
                                 #Choice: is this letter in or not (binary), for 5 letters
-                                if i1 == 1:
-                                    lettersInc.append(w[0])
-                                    prob *= originalDistribution_global[ord(w[0])-65]
-                                else:
-                                    lettersExc.append(w[0])
-                                    prob *= (1-originalDistribution_global[ord(w[0])-65])
-                                if i2 == 1:
-                                    lettersInc.append(w[1])
-                                    prob *= originalDistribution_global[ord(w[1])-65]
-                                else:
-                                    lettersExc.append(w[1])
-                                    prob *= (1-originalDistribution_global[ord(w[1])-65])
-                                if i3 == 1:
-                                    lettersInc.append(w[2])
-                                    prob *= originalDistribution_global[ord(w[2])-65]
-                                else:
-                                    lettersExc.append(w[2])
-                                    prob *= (1-originalDistribution_global[ord(w[2])-65])
-                                if i4 == 1:
-                                    lettersInc.append(w[3])
-                                    prob *= originalDistribution_global[ord(w[3])-65]
-                                else:
-                                    lettersExc.append(w[3])
-                                    prob *= (1-originalDistribution_global[ord(w[3])-65])
-                                if i5 == 1:
-                                    lettersInc.append(w[4])
-                                    prob *= originalDistribution_global[ord(w[4])-65]
-                                else:
-                                    lettersExc.append(w[4])
-                                    prob *= (1-originalDistribution_global[ord(w[4])-65])
+                                lc = ord(w[0])-65 #letter 0
+                                cPos = 0
+                                if i1 == 1: #Included somewhere
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([-1])
+                                    lettersIncPosExc.append([cPos])
+                                    prob *= (originalDistribution_global[lc] - originalDistribution[lc][cPos]) #We know it isn't in the first position
+                                elif i1 == 0: #Not included
+                                    lettersExc.append(w[cPos])
+                                    prob *= (1-originalDistribution_global[lc])
+                                elif i1 == 2: #Included in this position
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([cPos]) #0 position, since we are looking at i1
+                                    lettersIncPosExc.append([]) #Don't exclude, we know it is in a position
+                                    prob *= originalDistribution[lc][cPos]
+
+                                cPos = 1
+                                lc = ord(w[cPos])-65 #letter 0
+                                if i2 == 1: #Included somewhere
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([-1])
+                                    lettersIncPosExc.append([cPos])
+                                    prob *= (originalDistribution_global[lc] - originalDistribution[lc][cPos]) #We know it isn't in the first position
+                                elif i2 == 0: #Not included
+                                    lettersExc.append(w[cPos])
+                                    prob *= (1-originalDistribution_global[lc])
+                                elif i2 == 2: #Included in this position
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([cPos]) #0 position, since we are looking at i1
+                                    lettersIncPosExc.append([]) #Don't exclude, we know it is in a position
+                                    prob *= originalDistribution[lc][cPos]
+
+                                cPos = 2
+                                lc = ord(w[cPos])-65 #letter 0
+                                if i3 == 1: #Included somewhere
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([-1])
+                                    lettersIncPosExc.append([cPos])
+                                    prob *= (originalDistribution_global[lc] - originalDistribution[lc][cPos]) #We know it isn't in the first position
+                                elif i3 == 0: #Not included
+                                    lettersExc.append(w[cPos])
+                                    prob *= (1-originalDistribution_global[lc])
+                                elif i3 == 2: #Included in this position
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([cPos]) #0 position, since we are looking at i1
+                                    lettersIncPosExc.append([]) #Don't exclude, we know it is in a position
+                                    prob *= originalDistribution[lc][cPos]
+
+                                cPos = 3
+                                lc = ord(w[cPos])-65 #letter 0
+                                if i4 == 1: #Included somewhere
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([-1])
+                                    lettersIncPosExc.append([cPos])
+                                    prob *= (originalDistribution_global[lc] - originalDistribution[lc][cPos]) #We know it isn't in the first position
+                                elif i4 == 0: #Not included
+                                    lettersExc.append(w[cPos])
+                                    prob *= (1-originalDistribution_global[lc])
+                                elif i4 == 2: #Included in this position
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([cPos]) #0 position, since we are looking at i1
+                                    lettersIncPosExc.append([]) #Don't exclude, we know it is in a position
+                                    prob *= originalDistribution[lc][cPos]
+
+
+                                cPos = 4
+                                lc = ord(w[cPos])-65 #letter 0
+                                if i5 == 1: #Included somewhere
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([-1])
+                                    lettersIncPosExc.append([cPos])
+                                    prob *= (originalDistribution_global[lc] - originalDistribution[lc][cPos]) #We know it isn't in the first position
+                                elif i5 == 0: #Not included
+                                    lettersExc.append(w[cPos])
+                                    prob *= (1-originalDistribution_global[lc])
+                                elif i5 == 2: #Included in this position
+                                    lettersInc.append(w[cPos])
+                                    lettersIncPos.append([cPos]) #0 position, since we are looking at i1
+                                    lettersIncPosExc.append([]) #Don't exclude, we know it is in a position
+                                    prob *= originalDistribution[lc][cPos]
+
+                                    
+                                #if i2 == 1:
+                                #    lettersInc.append(w[1])
+                                #    prob *= originalDistribution_global[ord(w[1])-65]
+                                #elif i2 == 0:
+                                #    lettersExc.append(w[1])
+                                #    prob *= (1-originalDistribution_global[ord(w[1])-65])
+                                #if i3 == 1:
+                                #    lettersInc.append(w[2])
+                                #    prob *= originalDistribution_global[ord(w[2])-65]
+                                #elif i3 == 0:
+                                #    lettersExc.append(w[2])
+                                #    prob *= (1-originalDistribution_global[ord(w[2])-65])
+                                #if i4 == 1:
+                                #    lettersInc.append(w[3])
+                                #    prob *= originalDistribution_global[ord(w[3])-65]
+                                #elif i4 == 0:
+                                #    lettersExc.append(w[3])
+                                #    prob *= (1-originalDistribution_global[ord(w[3])-65])
+                                #if i5 == 1:
+                                #    lettersInc.append(w[4])
+                                #    prob *= originalDistribution_global[ord(w[4])-65]
+                                #elif i5 == 0:
+                                #    lettersExc.append(w[4])
+                                #    prob *= (1-originalDistribution_global[ord(w[4])-65])
 
                                 #Reduce words bsaed on this
                                 #Assume don't know where it is
                                 #Just set -1 for all, and don't ignore any positions
                                 #print(lettersExc)
                                 #print(lettersInc)
-                                lettersIncPos = [[-1]]*len(lettersInc)
+                                #lettersIncPos = [[-1]]*len(lettersInc)
                                 #print(lettersIncPos)
-                                self.removeWords(lettersExc, lettersInc, lettersIncPos, [[]]*len(lettersInc), originalWordList )
+                                self.removeWords(lettersExc, lettersInc, lettersIncPos, lettersIncPosExc, originalWordList )
                                 #print(len(originalWordList))
                                 #print(self.wordlist_N)
                                 self.getDistribution(self.wordlist_N)
                                 #Now, I can get entropy of new list
                                 newEntropy += self.getEntropyLetters(prob=prob)
-            print(newEntropy)
+            #print(newEntropy)
             wordEntropy[idx] = newEntropy
                                 #self.removeWords(lettersInc
                                 #Now, get new distribution
@@ -295,7 +377,9 @@ class WordleSolver:
             #Assume I pick this word.  What is the probability that none of the letters are correct?
         #Now, choose minimum entropy
         print('Minimum entropy is {}, with word {}'.format(np.min(wordEntropy), originalWordList[np.argmin(wordEntropy)]))
-            
+        print('Maximum entropy is {}, with word {}'.format(np.max(wordEntropy), originalWordList[np.argmax(wordEntropy)]))
+        self.wordlist_N = originalWordList #Replace
+        return originalWordList[np.argmin(wordEntropy)]
         exit()
 
     def getMutualInformation(self, words): #Get mutual information for words
@@ -513,7 +597,7 @@ class WordleSolver:
             #self.game.targetWord = 'PANDA'
             #self.game.targetWord = 'RUFFS'
             self.game.targetWord = 'PANIC'
-            self.game.targetWord = 'PROXY'
+            #self.game.targetWord = 'PROXY'
 
     def playWordleGame(self, strategy):
         #Play the game for self.tryCount
@@ -531,7 +615,8 @@ class WordleSolver:
                     bestguess = self.strategy_C()
             elif strategy == 4:
                 if i == -1:
-                    bestguess = 'PAPAL'
+                    bestguess = 'SEXES'
+                    bestguess = 'AEROS'
                 else:
                     bestguess = self.strategy_D()
             #bestguess = 'PANIC'
@@ -648,7 +733,7 @@ for i in range(numWords):
     #w.initializeFile('words/Collins_Scrabble_Words_2019.txt')
     w.initializeFile('words/sgb-words.txt')
     w.loadWords()
-    w.filterWords(N=5, M = 500)
+    w.filterWords(N=5, M=100)#, M = 2000)
     #w.strategy_A()
     w.initializeWordleGame(num = i)
     status, stepcount = w.playWordleGame(strategy = 4)
